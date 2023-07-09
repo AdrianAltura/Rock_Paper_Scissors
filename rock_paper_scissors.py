@@ -33,7 +33,10 @@ choices = [rock,paper,scissors]
 computer = random.randint(0,2)
 user = int(input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n'))
 
-if (user == 0 and computer == 2) or (user == 1 and computer == 0) or (user == 2 and computer == 1):
+if user > 2:
+  print('Invalid Entry. Try again!')
+
+elif (user == 0 and computer == 2) or (user == 1 and computer == 0) or (user == 2 and computer == 1):
   print(choices[user])
   print('Computer chose:')
   print(choices[computer])
@@ -45,8 +48,11 @@ elif user == computer:
   print(choices[computer])
   print("It's a tie")
 
-else:
+elif user != computer:
   print(choices[user])
   print('Computer chose:')
   print(choices[computer])
   print("You lose")
+
+
+  
