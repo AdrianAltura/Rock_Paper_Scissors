@@ -30,29 +30,34 @@ scissors = """
 # 0 = rock, 1 = paper, 2 = scissors
 
 choices = [rock,paper,scissors]
-computer = random.randint(0,2)
-user = int(input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n'))
+user = input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n')
 
-if user > 2:
-  print('Invalid Entry. Try again!')
+if user.isalpha():
+  print("Invalid Entry. You have entered a string of letters. try inputing a number!")
 
-elif (user == 0 and computer == 2) or (user == 1 and computer == 0) or (user == 2 and computer == 1):
-  print(choices[user])
-  print('Computer chose:')
-  print(choices[computer])
-  print('You won')
-
-elif user == computer:
-  print(choices[user])
-  print('Computer chose:')
-  print(choices[computer])
-  print("It's a tie")
-
-elif user != computer:
-  print(choices[user])
-  print('Computer chose:')
-  print(choices[computer])
-  print("You lose")
-
+elif user.isnumeric():
+  computer = random.randint(0,2)
+  x = int(user)
+  if x > 2:
+    print('Invalid Entry. Number too large! try inputing number <= 2')
+  
+  elif (x == 0 and computer == 2) or (x == 1 and computer == 0) or (x == 2 and computer == 1):
+    print(choices[x])
+    print('Computer chose:')
+    print(choices[computer])
+    print('You won')
+  
+  elif x == computer:
+    print(choices[x])
+    print('Computer chose:')
+    print(choices[computer])
+    print("It's a tie")
+  
+  elif user != computer:
+    print(choices[x])
+    print('Computer chose:')
+    print(choices[computer])
+    print("You lose")
+  
 
   
