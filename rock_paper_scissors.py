@@ -33,13 +33,13 @@ choices = [rock,paper,scissors]
 user = input('What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors\n')
 
 if user.isalpha():
-  print("Invalid Entry. You have entered a string of letters. try inputing a number!")
+  print("Invalid Entry. You have entered a string of letters. Please read the instructions")
 
 elif user.isnumeric():
   computer = random.randint(0,2)
   x = int(user)
   if x > 2:
-    print('Invalid Entry. Number too large! try inputing number <= 2')
+    print('Invalid Entry. Number entered too large! Please read instructions')
   
   elif (x == 0 and computer == 2) or (x == 1 and computer == 0) or (x == 2 and computer == 1):
     print(choices[x])
